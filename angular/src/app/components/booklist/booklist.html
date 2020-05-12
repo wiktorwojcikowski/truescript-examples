@@ -1,0 +1,41 @@
+<md-card layout="column" class="books-list">
+  <md-card-content >
+     <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Most popular books of All time</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content >
+      <div layout="row" class="list-headers" >
+        <div flex="40" class="column-title" ng-click="bl.setOrder('title');" >Title</div>
+        <div flex="20" class="column-published" ng-click="bl.setOrder('publishedDate');" >Published</div>
+        <div flex="20" class="column-rating"  ng-click="bl.setOrder('rating');" >Rating</div>
+        <div flex="20" class="column-links" >Buy on</div>
+      </div>
+      <div ng-repeat="book in bl.books | orderBy: bl.orderBy | limitTo : bl.pageLimit : bl.pageLimit * bl.page" class="list-entry" ng-class-odd="'odd'">
+        <div flex layout="row" layout-align="center center" >
+          <div flex="40" class="column-title" layout="row" ng-click="bl.toggleExpand($index);">
+            <img ng-src="{{book.thumbnailUrl}}" > 
+            <div class="" >
+              <div class="book-title">{{book.title}}</div>
+              <div class="book-author" >{{book.authors.join(", ")}}</div>
+            </div>
+          </div>
+          <div flex="20" class="column-published">{{book.publishedDate | date : 'y'}}</div>
+          <div flex="20" class="column-rating">{{book.rating}}/10</div>
+          <div flex="20" class="column-links" layout="column" >
+            <a flex ng-repeat="(store, link) in book.links" href="{{link}}" >{{store}}</a>
+          </div>
+        </div>
+        <div flex class="list-entry-details" ng-class="{expanded: $index==bl.expanded}" >
+          {{book.longDescription}}
+        </div>
+      </div>
+      <div class="pagination" >
+        <a href="" ng-click="bl.setPage(bl.page-1);" ><md-icon md-font-icon="material-icons" ng-class="{active: bl.page!=0}" >chevron_left</md-icon></a>
+        Page {{bl.page+1}} of {{bl.pageCount+1}}
+        <a href="" ng-click="bl.setPage(bl.page+1);" ><md-icon md-font-icon="material-icons" ng-class="{active: bl.page!=bl.pageCount}" >chevron_right</md-icon></a>
+      </div> 
+    </md-card-content>
+  </md-card-content>
+</md-card>

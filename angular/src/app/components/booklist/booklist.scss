@@ -1,0 +1,71 @@
+.books-list {
+  md-card-title {
+    padding: 10px;
+    display: block;
+  }
+  .list-headers {
+    text-transform: uppercase;
+    color: #aaa;
+    font-weight: 600;
+    padding: 10px;
+    font-size: 90%;
+    div {
+      cursor: pointer;
+      outline: none;
+    }
+  }
+  .list-entry {
+    padding: 10px;
+    &.odd {
+      background-color: #f1f1f1;
+    }
+    &-details {
+      padding: 20px 0px;
+      display: none;
+      &.expanded {
+        display: block;
+      }
+    }
+  }
+  .column-title {
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    img {
+      width: 80px;
+      border-radius: 15px;
+      padding-right: 10px;
+    }
+    .book-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .book-author {
+      color: #999;
+    }
+  }
+  .column-published {
+    text-align: center;
+  }
+  .column-rating {
+    text-align: center;
+  }
+  .column-links {
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: rgb(255,193,7);
+    }
+  }
+
+  .pagination {
+    text-align: center;
+    padding: 20px;
+    md-icon {
+      color: #ccc;
+      &.active {
+        color: #000;
+      }
+    }
+  }
+}
