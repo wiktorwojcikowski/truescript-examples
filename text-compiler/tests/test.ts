@@ -7,7 +7,7 @@ test('compile not collision operations', () => {
   const combined1 = Operation.combine(op1, op2);
   const combined2 = Operation.combine(op2, op1);
 
-  expect(combined2).toEqual(combined1);
+  expect(combined2.apply(s)).toEqual(combined1.apply(s));
 });
 
 test('compile operations on the same position', () => {
@@ -17,7 +17,7 @@ test('compile operations on the same position', () => {
   const combined1 = Operation.combine(op1, op2);
   const combined2 = Operation.combine(op2, op1);
 
-  expect(combined2).not.toEqual(combined1);
+  expect(combined2.apply(s)).not.toEqual(combined1.apply(s));
 });
 
 test('delete simple', () => {

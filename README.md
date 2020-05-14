@@ -47,11 +47,12 @@ Nothing to hide, it was generated with `express-generator-typescript`.
 ```cd ./api/
 npm i
 npm test
-npm start:dev
+npm run start:dev
 ```
 Adding export requests:
 `curl --header "Content-Type: application/json" --request POST --data '{"bookIpe":"epub"}' http://localhost:3000/api/jobs/exports`
-Listing requests path:
+
+Listing requests list:
 http://localhost:3000/api/jobs/exports
 
 
@@ -60,7 +61,7 @@ http://localhost:3000/api/jobs/exports
 Same as above, base code was generated with `generator-gulp-angular`. I like this app structure. I was using it in one of my projects in the past. Unfortunately its a bit unmaintained, but I fixed gulp and tests to work with the latest Node.
 
 ```cd ./angular/
-npm i
+npm i && bower i
 npm test
 npm start
 ```
