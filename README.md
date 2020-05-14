@@ -3,7 +3,7 @@
 
 ## 1 ExpressJS API
 
-Nothing to hide, it was generated with `express-generator-typescript`. 
+Small Api that save requests and process them in the background.
 
 ```cd ./api/
 npm i
@@ -19,7 +19,7 @@ http://localhost:3000/api/jobs/exports
 
 ## 2 Angular SPA
 
-Same as above, base code was generated with `generator-gulp-angular`. I like this app structure. I was using it in one of my projects in the past. Unfortunately its a bit unmaintained, but I fixed gulp and tests to work with the latest Node.
+Small angular interface with list ordering and pagination.
 
 ```cd ./angular/
 npm i && bower i
@@ -30,7 +30,7 @@ npm start
 
 ## 3 Text compiler
 
-Allow merging operations: moves, inserts, and deletes (also overlapping deletes). To run use:
+Compiler for single text actions:
 
 ```cd ./text-compiler/
 npm i
